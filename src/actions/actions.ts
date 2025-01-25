@@ -6,7 +6,7 @@ import { auth } from "@clerk/nextjs/server";
 import * as z from "zod";
 
 export const createNewDocument = async () => {
-  auth.protect();
+  await auth.protect();
 
   const { sessionClaims } = await auth();
 
@@ -33,7 +33,7 @@ export const createNewDocument = async () => {
 };
 
 export const deleteDocument = async (roomId: string) => {
-  auth.protect();
+  await auth.protect();
 
   try {
     // Delete document from documents collection
@@ -68,7 +68,7 @@ export const inviteUserAction = async (
   form: FormData,
   roomId: string
 ) => {
-  auth.protect();
+  await auth.protect();
   const email = form.get("email") as string | null;
   if (!email) {
     return {
@@ -106,7 +106,7 @@ export const inviteUserAction = async (
 };
 
 export const deleteUserAction = async (roomId: string, email: string) => {
-  auth.protect();
+  await auth.protect();
 
   try {
     await adminDb
@@ -154,7 +154,7 @@ export const summarizeDocument = async (
 };
 
 export const chatToAI = async (documentData: any, question: string) => {
-  auth.protect();
+  await auth.protect();
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BAISE_URL}/chat`, {
       method: "POST",
