@@ -1,12 +1,10 @@
 "use client";
-import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { Button } from "./ui/button";
 import { createNewDocument } from "@/actions/actions";
 
 const NewDocumentButton = () => {
-  const { user } = useUser();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
@@ -17,7 +15,6 @@ const NewDocumentButton = () => {
     });
   };
 
-  if (user) {
     return (
       <div className="w-full flex justify-center">
         <Button onClick={handleNewDocument} disabled={isPending}>
@@ -29,7 +26,6 @@ const NewDocumentButton = () => {
         </Button>
       </div>
     );
-  }
 };
 
 export default NewDocumentButton;
