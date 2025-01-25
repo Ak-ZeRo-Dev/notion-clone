@@ -58,3 +58,15 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+---
+
+## ✍️ Author
+
+**Abdulrahman Mahmoud Said Mohamed Al-Kurdi**  
+- 💼 **[Portfolio](https://ak-zero.vercel.app)**  
+- 📧 **[abdulrahman.mahmoud.alkurdi@gmail.com	](mailto:abdulrahman.mahmoud.alkurdi@gmail.com	)**  
+
+---
+
+Happy coding! 🚀  
